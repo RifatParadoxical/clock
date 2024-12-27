@@ -50,6 +50,7 @@ updating-clock/
 ## Comparison
 ### Screenshots
 **Previous Version**
+
 ![Previous Version](./assest/previousAnalog.png)
 ![Previous Version](./assest/previousDigital.png)
 

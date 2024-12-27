@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="icon" type="image/x.icon" href="C:\Users\Rifat\Downloads\image (1).png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+        background: linear-gradient( #3D5AF1, #22D1EE, #3D5AF1,#22D1EE);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        h1{
+            font-size: 50px;
+            color: white;
+            padding-bottom: 16px;
+            text-align: center;
+            word-spacing: 10px;
+            position: relative;
+            top: 0%;
+        }
+        h1::before{
+            content:var(--before-content, "ANALOG CLOCK");
+            opacity: 0.15;
+            top: 0;
+            left: 0;
+            transform: translate(-18%, -25%);
+            text-align: center;
+            text-wrap: nowrap;
+            position: absolute;
+            word-spacing: 5px;
+            font-size: 5rem;
+        }
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(70vmin + 100px);
+            width: 70vmin;
+            background-color: white;
+            border-radius: 16px;
+        }
+        .clock-container>.clock{
+            height: 70vmin;
+            width: 100%;
+            position: relative;
+        }
+        .clock>img{
+            height: 100%;
+            width: 100%;
+            contain: content;
+            position: absolute;
+        }
+        .clock-container>.btndiv{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btndiv>button{
+            text-decoration: none;
+            min-height: 20px;
+            font-size: 1.2rem;
+            color: rgb(255, 255, 255);
+            background: linear-gradient(45deg, #0590a8, #0590a8, #2d3b83);
+            padding: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        .btndiv>button:hover{
+            color: rgb(255, 255, 255);
+            background:linear-gradient(60deg, #0590a8, #2d3b83, #2d3b83);
+        }
+        #digital{
+            display: none;
+            font-size: xx-large;
+            font-weight: bolder;
+            height: 70vmin;
+            width: 100%;
+        }
+    .hour-hand{
+        transform-origin: bottom;
+        position: absolute;
+    }
+    .minute-hand{
+        transform-origin: bottom;
+        position: absolute;
+    }
+    .second-hand{
+        transform-origin: bottom;
+        position: absolute;
+    }
+    @media screen and (max-width:600px) {
+        h1::before{
+            font-size: 50px;
+            word-spacing: 50px;
+            transform: translate(-5%, 0%);
+        }
+    }
+    </style>
+</head>
+<body>
+    <h1>ANALOG CLOCK</h1>
+      <div class="clock-container">
+        <div id="analog" class="clock">
+            <img src="./assest/Clock.png" alt="Clock">
+            <img src="./assest/Second.png" alt="s" id="second-hand">
+            <img src="./assest/Minutes.png" alt="m" id="minute-hand">
+            <img src="./assest/Hour.png" alt="h" id="hour-hand">
+        </div>
+        <div id="digital">
+
+            <h2 id="date"></h2>
+        </div>
+        <div class="btndiv"><button id="dgtal">Switch to Digital Clock</button></div>
+        </div>
+</body>
+    <script src="clock.js">
+    </script>
+</html>

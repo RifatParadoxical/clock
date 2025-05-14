@@ -7,11 +7,11 @@ setInterval(
     function() {
         d = new Date();
         second = d.getSeconds() * 6;
-        minute = d.getMinutes() * 6 +  Math.round(second / 60);
-        hour = d.getHours() * 30 + Math.round(minute / 12);
-        document.getElementById("second-hand").style.transform = "rotate(" + second + "deg)";
-        document.getElementById("minute-hand").style.transform = "rotate(" + minute + "deg)";
-        document.getElementById("hour-hand").style.transform = "rotate(" + hour + "deg)";
+        minute = d.getMinutes() * 6 + getSeconds() * 0.1;
+        hour = d.getHours() * 30 + getSeconds() * 0.008333;
+        document.getElementById("second-hand").style.transform = "rotate( ${second} deg)";
+        document.getElementById("minute-hand").style.transform = "rotate( ${minute} deg)";
+        document.getElementById("hour-hand").style.transform = "rotate( ${hour} deg)";
     }, 1000
 );
 
